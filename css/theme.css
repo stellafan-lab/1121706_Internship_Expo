@@ -1,0 +1,127 @@
+/* ═══════════════════════════════════════════
+   配色：科技青綠（白底＋墨黑＋單一青綠強調）
+   沿用 base.css 的變數名稱，只換值
+═══════════════════════════════════════════ */
+:root {
+  /* 背景與框線（原 cream） */
+  --cream-50:  #FFFFFF;
+  --cream-100: #F4F7F6;
+  --cream-200: #E3EAE8;
+  --cream-300: #CBD6D3;
+  --cream-400: #AFC0BB;
+
+  /* 強調色（原 peach / amber / terra） */
+  --peach-100: #E3F4F1;
+  --peach-200: #BFE8E0;
+  --peach-300: #86D3C6;
+  --peach-400: #14B8A6;
+  --peach-500: #0F9D8A;
+  --amber-400: #2DD4BF;
+  --amber-500: #14B8A6;
+  --amber-600: #0F9D8A;
+  --amber-700: #0B7A6B;
+  --terra-500: #0F9D8A;
+  --terra-600: #0B7A6B;
+  --terra-700: #065F55;
+
+  /* 文字 */
+  --ink-900: #111827;
+  --ink-700: #1F2937;
+  --ink-500: #4B5563;
+  --ink-300: #6B7280;
+  --ink-200: #9CA3AF;
+
+  --shadow-sm: 0 1px 3px rgba(17, 24, 39, 0.06);
+  --shadow:    0 4px 16px rgba(17, 24, 39, 0.07);
+  --shadow-lg: 0 12px 32px rgba(17, 24, 39, 0.10);
+
+  /* 標題改用無襯線黑體，數字清楚、不花俏 */
+  --serif: 'Plus Jakarta Sans', 'Noto Sans TC', system-ui, sans-serif;
+}
+
+body::before { display: none; }          /* 拿掉紙張雜訊紋理 */
+body { background: #FFFFFF; }
+#main { background: #FFFFFF; }
+
+/* 標題：粗黑體、不斜體，強調字只換顏色 */
+h1.hero-h1, .home-h1, .b-title, .proj-card-t, .home-projects-t, .ref-t, .tl-t, .road-name, .quote {
+  letter-spacing: -0.01em;
+}
+.home-h1 { font-weight: 800; }
+h1.hero-h1 em, .home-h1 em, .home-projects-t em {
+  font-style: normal;
+  background: none;
+  -webkit-text-fill-color: var(--peach-500);
+  color: var(--peach-500);
+}
+.home-h1 em::after { display: none; }
+.home-stat .v { background: none; -webkit-text-fill-color: var(--peach-500); color: var(--peach-500); }
+.stat-v, .cover-value { font-family: var(--sans); }
+.quote { font-family: var(--sans); font-weight: 500; font-size: 18px; }
+
+/* 頁首區：素白＋淡灰綠，不用漸層光暈 */
+.hero {
+  background: linear-gradient(180deg, #F4F7F6, #FFFFFF);
+  border-bottom: 1px solid var(--cream-200);
+}
+.hero::after { background: none; }
+.hero-deco { opacity: 0.05; filter: grayscale(1); }
+.home { background: #FFFFFF; }
+.home-l::before { display: none; }
+.home-projects { background: #F7FAF9; border-top: 1px solid var(--cream-200); }
+
+/* 側欄 */
+#sidebar { background: #FFFFFF; border-right: 1px solid var(--cream-200); box-shadow: none; }
+.sb-item.active {
+  background: var(--peach-100);
+  border-left-color: var(--peach-500);
+  color: var(--terra-700);
+}
+.sb-item.special { background: none; color: var(--ink-700); font-weight: 500; }
+.sb-item.special.active { background: var(--peach-100); color: var(--terra-700); font-weight: 700; }
+.sb-item.special::before { display: none; }
+.sb-brand-dot { background: var(--ink-900); box-shadow: none; }
+.topbar { background: rgba(255, 255, 255, 0.94); }
+
+/* 按鈕與徽章：單色，不用漸層 */
+.qbtn.primary, .home-eyebrow, .rag-send, .perm-btn.active, .rag-lang-btn.active,
+.borrow-step.active, .rag-msg-user-bubble, .adc-mode button.active, .rag-hint.active, #fab {
+  background: var(--peach-500);
+  box-shadow: none;
+}
+.qbtn.primary:hover { background: var(--terra-600); box-shadow: none; }
+
+/* 章節編號：全部統一成青綠，不再每個專案不同色 */
+.b-num, .b-num.blue, .b-num.green, .b-num.red, .b-num.purple, .b-num.amber, .fbox-num {
+  background: var(--peach-500);
+  box-shadow: none;
+}
+.block-h::after { background: var(--peach-500); }
+
+/* 專案卡片、歷程列、心得卡：統一強調色 */
+.proj-card {
+  --card-color: #0F9D8A !important;
+  --card-ic-bg: #E3F4F1 !important;
+  --card-gradient: linear-gradient(135deg, #F0FAF8, transparent) !important;
+}
+.proj-card-ic, .ref-ic, .stat-ic, .sec-i, .rag-banner-ic, .rag-welcome-ic, .rag-msg-ai-av {
+  background: var(--peach-100);
+  box-shadow: none;
+}
+.road-item { --rc: #0F9D8A !important; }
+.ref-card { --c: #0F9D8A !important; --c-bg: #E3F4F1 !important; }
+
+/* 重點橫幅：實色 */
+.hl-band { background: var(--ink-900); box-shadow: none; }
+.hl-band::before { display: none; }
+
+.tag { box-shadow: none; }
+.tag::before { color: var(--peach-500); }
+.img-card:hover { border-color: var(--peach-300); }
+.dt thead { background: #F4F7F6; }
+.rag-banner { background: #F0FAF8; border-color: var(--peach-200); }
+.rag-banner::before { display: none; }
+.rag-header { background: #F7FAF9; }
+
+/* 首頁標題縮小（2026-11-18，A 版） */
+.home-h1 { font-size: clamp(30px, 4vw, 46px); font-weight: 700; }

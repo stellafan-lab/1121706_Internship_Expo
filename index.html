@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>智易科技 · 實習成果（競賽展）</title>
+<meta name="description" content="資管系第 31 屆專業實習競賽展 — 智易科技製造測試軟體部門實習成果：五個專案與互動展示">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/extra.css">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/demos.css">
+<link rel="stylesheet" href="css/sim.css">
+<link rel="stylesheet" href="css/cpk-sim.css">
+</head>
+<body>
+
+<div id="lb">
+  <button id="lb-close" aria-label="關閉">✕</button>
+  <button class="lb-nav" id="lb-prev" aria-label="上一張">‹</button>
+  <button class="lb-nav" id="lb-next" aria-label="下一張">›</button>
+  <img id="lb-img" src="" alt="">
+  <div id="lb-cap"></div>
+</div>
+<div id="sb-mask"></div>
+
+<div id="app">
+<aside id="sidebar">
+  <div class="sb-brand">
+    <div class="sb-brand-row">
+      <div class="sb-brand-dot">A</div>
+      <div class="sb-brand-text">Arcadyan<br><span style="font-weight:400; font-size:11px; color:var(--ink-300);">智易科技</span></div>
+    </div>
+    <div class="sb-brand-sub">MANUFACTURING TEST SW<br>實習成果 · 競賽展 2026</div>
+  </div>
+  <nav class="sb-nav">
+    <div class="sb-group">總覽</div>
+    <a class="sb-item active" data-page="home" href="#home"><span class="sb-icon">🏠</span><span>首頁</span></a>
+    <a class="sb-item" data-page="about" href="#about"><span class="sb-icon">🏢</span><span>實習單位與職掌</span></a>
+    <a class="sb-item" data-page="journey" href="#journey"><span class="sb-icon">🗓</span><span>實習歷程</span></a>
+    <div class="sb-group">五個實習專案</div>
+    <a class="sb-item" data-page="p1" href="#p1"><span class="sb-icon">📊</span><span>甘特圖自動化</span><span class="sb-badge">01</span></a>
+    <a class="sb-item" data-page="p2" href="#p2"><span class="sb-icon">🔧</span><span>設備借用系統</span><span class="sb-badge">02</span></a>
+    <a class="sb-item" data-page="p3" href="#p3"><span class="sb-icon">🧠</span><span>Error Code 查詢</span><span class="sb-badge">03</span></a>
+    <a class="sb-item special" data-page="p4" href="#p4"><span class="sb-icon">⚡</span><span>ADC-Tester</span><span class="sb-badge">04</span></a>
+    <a class="sb-item" data-page="p5" href="#p5"><span class="sb-icon">📋</span><span>Log CPK Validator</span><span class="sb-badge">05</span></a>
+    <div class="sb-group">總結</div>
+    <a class="sb-item" data-page="eval" href="#eval"><span class="sb-icon">📈</span><span>自我評估與建議</span></a>
+    <a class="sb-item" data-page="reflect" href="#reflect"><span class="sb-icon">💡</span><span>學習心得與感想</span></a>
+  </nav>
+  <div class="sb-footer">
+    <strong>元智大學 資訊管理學系</strong><br>
+    第 31 屆專業實習競賽展<br>
+    范家雩 · 1121706
+  </div>
+</aside>
+
+<main id="main">
+<div class="topbar">
+  <div class="bc"><button id="menu-btn" aria-label="選單">☰</button><span id="bc-root">首頁</span><span class="sep" id="bc-sep" style="display:none">/</span><strong id="bc-cur"></strong></div>
+  <div class="tb-right">
+    <span class="pill">2026 實習</span>
+    <span class="pill hot">製造測試軟體部門</span>
+  </div>
+</div>
+
+<!-- ═════════════ HOME ═════════════ -->
+<div class="page active" id="page-home" data-title="">
+  <div class="home">
+    <div class="home-l">
+      <div class="home-eyebrow">✦ 2026 專業實習成果</div>
+      <h1 class="home-h1"><em>智易科技</em><br>股份有限公司</h1>
+      <div class="home-cover-info">
+        <div class="cover-row"><span class="cover-label">實習單位</span><span class="cover-value">智易科技股份有限公司</span></div>
+        <div class="cover-row"><span class="cover-label">實習部門</span><span class="cover-value">製造測試軟體部門 <span class="cover-suffix">（MT）</span></span></div>
+        <div class="cover-row"><span class="cover-label">指導老師</span><span class="cover-value">林志麟 <span class="cover-suffix">教授</span></span></div>
+        <div class="cover-row"><span class="cover-label">姓　　名</span><span class="cover-value">范家雩</span></div>
+        <div class="cover-row"><span class="cover-label">學　　號</span><span class="cover-value">1121706</span></div>
+        <div class="cover-row"><span class="cover-label">主題名稱</span><span class="cover-value">從自動化工具到硬體量測系統</span></div>
+      </div>
+      <p class="home-desc">
+        在智易科技製造測試軟體部門，我一個人負責了五個專案：
+        週報甘特圖自動化、部門設備借用系統、三語 Error Code 查詢系統、
+        多點電壓電流量測原型 ADC-Tester，以及產線 log 格式檢查工具。
+      </p>
+      <div class="home-quick">
+        <button class="qbtn primary" onclick="goPage('p4')">⚡ 體驗故障隔離 Demo</button>
+        <button class="qbtn ghost" onclick="goPage('journey')">看實習歷程 →</button>
+      </div>
+      <div class="home-stats">
+        <div class="home-stat"><span class="v" data-count="5">0</span><div class="l">完成專案</div></div>
+        <div class="home-stat"><span class="v" data-count="2">0</span><div class="l">系統上線維護中</div></div>
+        <div class="home-stat"><span class="v" data-count="3">0</span><div class="l">查詢語言（中／英／越）</div></div>
+        <div class="home-stat"><span class="v" data-count="6">0</span><div class="l">路獨立量測、互不影響</div></div>
+      </div>
+    </div>
+    <div class="home-r">
+      <img src="images/building.jpg" alt="智易科技大樓">
+      <div class="home-r-overlay">
+        <div class="home-r-overlay-l">Arcadyan · Hsinchu</div>
+        <div class="home-r-overlay-t">智易科技股份有限公司</div>
+        <div class="home-r-overlay-s">國內網路通訊設備的研發製造大廠</div>
+      </div>
+    </div>
+  </div>
+  <div class="home-projects">
+    <div class="home-projects-h">
+      <div>
+        <div class="home-projects-t">五個專案 <em>總覽</em></div>
+        <div class="home-projects-sub">依時間順序排列，點卡片進入專案頁；其中兩個有可以直接操作的互動 Demo</div>
+      </div>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card" style="--card-color:#0F9D8A; --card-ic-bg: linear-gradient(135deg, #BFE8E0, #14B8A6); --card-gradient: linear-gradient(135deg, #E3F4F1, transparent);" onclick="goPage('p1')">
+        <div class="proj-card-num">PROJECT · 01</div>
+        <div class="proj-card-ic">📊</div>
+        <div class="proj-card-t">週報甘特圖<br>自動化</div>
+        <div class="proj-card-d">更新 Excel、雙擊程式，一鍵生成甘特圖，不再用 Canva 手動拉圖</div>
+        <div class="proj-card-cta">查看專案</div>
+      </div>
+      <div class="proj-card" style="--card-color:#16A34A; --card-ic-bg: linear-gradient(135deg, #DCFCE7, #4ADE80); --card-gradient: linear-gradient(135deg, #DCFCE7, transparent);" onclick="goPage('p2')">
+        <div class="proj-card-num">PROJECT · 02</div>
+        <div class="proj-card-ic">🔧</div>
+        <div class="proj-card-t">MT 設備借用<br>管理系統</div>
+        <div class="proj-card-d">借用、審核、歸還、催還全流程上線；腳本執行從 30 秒降到 0.5 秒</div>
+        <div class="proj-card-cta">查看專案</div>
+      </div>
+      <div class="proj-card" style="--card-color:#2563EB; --card-ic-bg: linear-gradient(135deg, #DBEAFE, #60A5FA); --card-gradient: linear-gradient(135deg, #DBEAFE, transparent);" onclick="goPage('p3')">
+        <div class="proj-card-num">PROJECT · 03</div>
+        <div class="proj-card-ic">🧠</div>
+        <div class="proj-card-t">Error Code<br>語意查詢系統</div>
+        <div class="proj-card-d">用白話描述問題就找得到錯誤碼，中、英、越南文都能查</div>
+        <div class="proj-card-cta">試用查詢 Demo</div>
+      </div>
+      <div class="proj-card" style="--card-color:#DC2626; --card-ic-bg: linear-gradient(135deg, #FEE2E2, #F87171); --card-gradient: linear-gradient(135deg, #FEE2E2, transparent);" onclick="goPage('p4')">
+        <div class="proj-card-num">PROJECT · 04</div>
+        <div class="proj-card-ic">⚡</div>
+        <div class="proj-card-t">ADC-Tester<br>多點量測</div>
+        <div class="proj-card-d">六路電壓電流量測，一路壞掉其他照常，接回 3 秒自動恢復</div>
+        <div class="proj-card-cta">體驗拔線 Demo</div>
+      </div>
+      <div class="proj-card" style="--card-color:#7C3AED; --card-ic-bg: linear-gradient(135deg, #EDE9FE, #A78BFA); --card-gradient: linear-gradient(135deg, #EDE9FE, transparent);" onclick="goPage('p5')">
+        <div class="proj-card-num">PROJECT · 05</div>
+        <div class="proj-card-ic">📋</div>
+        <div class="proj-card-t">Log CPK<br>Validator</div>
+        <div class="proj-card-d">與 AI 分析 C++ 原始碼、推導 16 條規則，送出前就找出 log 哪一行會出事</div>
+        <div class="proj-card-cta">試跑檢查 Demo</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════ ABOUT ═════════════ -->
+<div class="page" id="page-about" data-title="實習單位與職掌">
+  <div class="hero">
+    <div class="hero-deco">🏢</div>
+    <div class="tag">壹 · 工作內容</div>
+    <h1 class="hero-h1">智易科技<br><em>製造測試軟體部門</em></h1>
+    <p class="lead">部門負責研發與優化產線上用來檢驗產品的自動化測試軟體。相較於部門日常的產線業務，我的工作偏重在自動化工具、內部管理系統，以及量測治具的新方案研究。</p>
+  </div>
+  <div class="content">
+    <div class="block">
+      <div class="block-h"><div class="b-num">1</div><div class="b-title">實習單位與部門</div></div>
+      <div class="split">
+        <div>
+          <p class="prose">智易科技是國內網路通訊設備的研發製造大廠，產品包含寬頻閘道器、Wi-Fi 路由器、5G 設備等。</p>
+          <p class="prose">部門負責產品組殼前後（<strong>PT 與 FT 階段</strong>）的各項檢查，包含<em>射頻（RF）訊號</em>、<em>功能測試</em>與<em>電路訊號的穩定度</em>，是確保出廠品質與良率的關鍵關卡。</p>
+          <div class="flow">
+            <div class="fn"><div class="fbox"><div class="fbox-num">1</div><div class="fbox-t">軟體研發中心</div><div class="fbox-s">Software R&amp;D Center</div></div></div>
+            <div class="farrow">›</div>
+            <div class="fn"><div class="fbox"><div class="fbox-num">2</div><div class="fbox-t">研發測試本部</div><div class="fbox-s">R&amp;D Test Division</div></div></div>
+            <div class="farrow">›</div>
+            <div class="fn"><div class="fbox"><div class="fbox-num">3</div><div class="fbox-t">測試軟體研發處</div><div class="fbox-s">Test SW Dept.</div></div></div>
+            <div class="farrow">›</div>
+            <div class="fn"><div class="fbox"><div class="fbox-num">4</div><div class="fbox-t">製造測試軟體部</div><div class="fbox-s">Manufacturing Test SW</div></div></div>
+          </div>
+        </div>
+        <div class="img-card" data-src="images/building.jpg" data-cap="智易科技大樓">
+          <div class="img-wrap"><img src="images/building.jpg" alt="智易科技大樓" loading="lazy"></div>
+          <div class="cap"><span class="num">圖</span>智易科技大樓</div>
+          <span class="zoom">🔍 點擊放大</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-h"><div class="b-num">2</div><div class="b-title">目標：每個專案都從部門真實的問題出發</div></div>
+      <table class="dt">
+        <thead><tr><th style="width:170px">專案</th><th>原本的問題</th><th>目標</th></tr></thead>
+        <tbody>
+          <tr><td><strong>甘特圖自動化</strong></td><td>每週都要用 Canva 一格一格手動拉出各案的時程圖，費時又容易出錯</td><td>只要在 Excel 填好欄位，一鍵生成甘特圖</td></tr>
+          <tr><td><strong>MT 設備借用系統</strong></td><td>工具與設備借來借去，最後不知道在誰手上，總是不見</td><td>每一台設備「現在在誰手上、什麼時候還」都查得到，並自動提醒歸還</td></tr>
+          <tr><td><strong>Error Code 查詢</strong></td><td>要找最符合情境的錯誤碼，得把整份檔案丟給 LLM 問，或在上千筆中慢慢翻；產線也有外籍同仁</td><td>用白話描述情境就能找到相關錯誤碼，並支援多國語言</td></tr>
+          <tr><td><strong>ADC-Tester</strong></td><td>現行量測治具以六片量測板串接，其中一片掛掉，其他五片也跟著讀不到值</td><td>同時量多點電壓電流，任一路異常不影響其他路，並能自動復原</td></tr>
+          <tr><td><strong>Log CPK Validator</strong></td><td>測試程式換版或 log 格式改動後，CPK 報表常常產不出來，又看不出問題在哪一行</td><td>送出前先檢查 log 格式，直接指出問題在第幾行、原因與處理方式</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="block">
+      <div class="block-h"><div class="b-num">3</div><div class="b-title">規範與限制</div></div>
+      <div class="sec-list">
+        <div class="sec"><div class="sec-i">🛡️</div><div><div class="sec-t">公司資安環境</div><div class="sec-d">公司網路有防火牆與資安軟體，網頁系統必須在不更動公司資安設定的前提下運作。</div></div></div>
+        <div class="sec"><div class="sec-i">💰</div><div><div class="sec-t">成本</div><div class="sec-d">以免費平台為主（GitHub Pages、Google Apps Script、Hugging Face 等）；ADC-Tester 零件自購約 NT$1,000。</div></div></div>
+        <div class="sec"><div class="sec-i">🧩</div><div><div class="sec-t">指定平台與定位</div><div class="sec-d">ADC-Tester 指定使用樹莓派，是用來確認做法可行的驗證原型，不是直接上產線的產品。</div></div></div>
+        <div class="sec"><div class="sec-i">🤝</div><div><div class="sec-t">溝通原則</div><div class="sec-d">給主管的文件只報告做法與實測數據；規格由主管決定，不越權提建議。</div></div></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-h"><div class="b-num">4</div><div class="b-title">職掌：我扮演的角色</div></div>
+      <div class="hl-band"><div class="ic">👩‍💻</div><p>五個專案都由主管交辦、<strong>由我一人負責開發</strong>；其中借用系統與 Error Code 系統上線後，至今仍由我持續維護與新增功能。</p></div>
+      <table class="dt">
+        <thead><tr><th style="width:170px">專案</th><th>我負責的工作</th></tr></thead>
+        <tbody>
+          <tr><td><strong>甘特圖自動化</strong></td><td>自動化程式：日期格式解析、版面與圖例、跨年行程面板、滾動 12 個月時間軸的版本</td></tr>
+          <tr><td><strong>MT 設備借用系統</strong></td><td>需求整理、前後端開發、資料庫設計、部署上線；持續維護擴充，找出系統變慢的根本原因並優化</td></tr>
+          <tr><td><strong>Error Code 查詢</strong></td><td>錯誤碼資料整理、語意搜尋與 AI 說明、三語介面、後台管理與審核流程、雲端部署</td></tr>
+          <tr><td><strong>ADC-Tester</strong></td><td>研究規劃、選料採購、接線、Python 程式、驗證實驗、報告與 Demo；後續在 AI 協助下改寫治具 USB Dongle 韌體並實測驗證</td></tr>
+          <tr><td><strong>Log CPK Validator</strong></td><td>與 AI 分析 CPK 原始碼（C++ 約 2,800 行）推導 16 條規則、開發檢查網頁、實際編譯原程式雙向驗證、撰寫說明書</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════ JOURNEY ═════════════ -->
+<div class="page" id="page-journey" data-title="實習歷程">
+  <div class="hero">
+    <div class="hero-deco">🗓</div>
+    <div class="tag">貳 · 完成任務</div>
+    <h1 class="hero-h1">七個月、<em>五個專案</em></h1>
+    <p class="lead">從二月底報到到現在，每個專案的期間、確實完成的成果與目前狀態。點任一列可以直接進入該專案。</p>
+  </div>
+  <div class="content">
+    <div class="block">
+      <div class="block-h"><div class="b-num">1</div><div class="b-title">專案時程</div><span class="b-sub">2026 年 2 月 – 9 月</span></div>
+      <div class="gantt-bar" id="journey-gantt">
+        <div class="gb-axis"><span>2 月</span><span>3 月</span><span>4 月</span><span>5 月</span><span>6 月</span><span>7 月</span><span>8 月</span><span>9 月</span></div>
+      </div>
+      <p style="font-size:12px; color:var(--ink-300)">漸層尾端代表上線後仍持續維護中。</p>
+    </div>
+    <div class="block">
+      <div class="block-h"><div class="b-num">2</div><div class="b-title">完成任務一覽</div></div>
+      <div class="road">
+        <div class="road-item" style="--rc:#0F9D8A" onclick="goPage('p1')">
+          <div><div class="road-date">02 月底 – 07/08</div><div class="road-name">甘特圖自動化</div></div>
+          <div class="road-done">只要更新 Excel，一鍵就能生成甘特圖；日期格式容錯、跨年行程面板；完成最終版與「滾動時間軸」版本</div>
+          <div class="road-status"><span class="status-badge g">已交付使用</span></div>
+        </div>
+        <div class="road-item" style="--rc:#16A34A" onclick="goPage('p2')">
+          <div><div class="road-date">04/16 – 迄今</div><div class="road-name">MT 設備借用系統</div></div>
+          <div class="road-done">借用、審核、歸還全流程上線（至 09/02 共 474 次提交）；新增測試站預約；執行時間從約 30 秒降到 0.5 秒</div>
+          <div class="road-status"><span class="status-badge g">上線中・持續維護</span></div>
+        </div>
+        <div class="road-item" style="--rc:#2563EB" onclick="goPage('p3')">
+          <div><div class="road-date">05 月 – 迄今</div><div class="road-name">Error Code 查詢系統</div></div>
+          <div class="road-done">千餘筆錯誤碼支援中英越三語語意搜尋；改寫為 FastAPI 後端（114 次提交）；後台管理、變更審核、自動編號</div>
+          <div class="road-status"><span class="status-badge g">上線中・持續維護</span></div>
+        </div>
+        <div class="road-item" style="--rc:#DC2626" onclick="goPage('p4')">
+          <div><div class="road-date">07/15 – 10/08</div><div class="road-name">ADC-Tester</div></div>
+          <div class="road-done">樹莓派原型六路同時量測；兩次拔線實測驗證故障隔離與自動復原；09/02 對部門現場 Demo；擴充第二顆多工器；改用治具 USB Dongle 完成 C 韌體版驗證</div>
+          <div class="road-status"><span class="status-badge g">原型、Dongle 版完成</span></div>
+        </div>
+        <div class="road-item" style="--rc:#7C3AED" onclick="goPage('p5')">
+          <div><div class="road-date">09/23</div><div class="road-name">Log CPK Validator</div></div>
+          <div class="road-done">從原始碼推導 16 條格式規則並做成檢查網頁；實際編譯原程式雙向驗證；找出兩批 log 產不出 CPK 的根本原因</div>
+          <div class="road-status"><span class="status-badge g">已交付使用</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════ P1 GANTT ═════════════ -->
+<div class="page" id="page-p1" data-title="01 · 甘特圖自動化">
+  <div class="hero">
+    <div class="hero-deco">📊</div>
+    <div class="tag">Project 01 · Python 自動化</div>
+    <h1 class="hero-h1">週報甘特圖<br><em>一鍵生成</em></h1>
+    <p class="lead">二月底報到後接到的第一個任務。部門每週例會要看各案「下次上產測」與「預計量產（MP）」的時間，我寫了一支 Python 程式做到「資料與圖表分離」：Excel 填好時間，雙擊程式就出圖。</p>
+    <div class="stats-row">
+      <div class="stat-chip"><div class="stat-ic">🖱️</div><div><div class="stat-v">1 鍵</div><div class="stat-l">雙擊即生成</div></div></div>
+      <div class="stat-chip"><div class="stat-ic">🗓</div><div><div class="stat-v">12 個月</div><div class="stat-l">當月起滾動顯示</div></div></div>
+      <div class="stat-chip"><div class="stat-ic">🎨</div><div><div class="stat-v">4 色</div><div class="stat-l">狀態圖例</div></div></div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="block">
+      <div class="block-h"><div class="b-num">1</div><div class="b-title">背景與目標</div></div>
+      <div class="pg">
+        <div class="pg-box bad"><div class="pg-l">BEFORE · 原本</div><p>每個禮拜用 Canva 一格一格手動拉出時程圖，案子一多就很花時間，也容易漏改。</p></div>
+        <div class="pg-arrow">→</div>
+        <div class="pg-box good"><div class="pg-l">AFTER · 現在</div><p>只要在固定格式的 Excel 填好時間，雙擊程式，一鍵生成最新的甘特圖。</p></div>
+      </div>
+      <div class="imgrow g2">
+        <div class="img-card" data-src="images/gantt-old.png" data-cap="甘特圖初版（示範資料）"><div class="img-wrap"><img src="images/gantt-old.png" alt="甘特圖初版" loading="lazy"></div><div class="cap"><span class="num">V1</span>初版</div><span class="zoom">🔍 點擊放大</span></div>
+        <div class="img-card" data-src="images/gantt-new.png" data-cap="改良後的新版（示範資料）"><div class="img-wrap"><img src="images/gantt-new.png" alt="甘特圖新版" loading="lazy"></div><div class="cap"><span class="num">V2</span>改良後的新版</div><span class="zoom">🔍 點擊放大</span></div>
+      </div>
+    </div>
+    <div class="block">
+      <div class="block-h"><div class="b-num">2</div><div class="b-title">模擬操作：改 Excel，一鍵出圖</div></div>
+      <p class="prose">先在 Excel 分頁直接修改資料，按「執行」就會切到 Figure 1 看畫出來的甘特圖。試試把日期改成「11/B」「Dec」「12月1日」這類寫法，或在「預計 MP 時間」輸入 <strong>MP</strong> 讓它變成綠色，再按「執行」看看。</p>
+      <div class="demo-frame">
+        <div class="demo-frame-bar"><span></span><span></span><span></span><em>Project Info.xlsx ＋ gantt_from_project_info.py · 模擬畫面</em></div>
+        <div class="gx" id="gx"></div>
+        <div class="demo-frame-note">⚠ 模擬畫面：案名與人名為<strong>虛構示範資料</strong>；以 2026/09/24 當作「今天」，日期解析規則與實際程式相同</div>
+      </div>
+    </div>
+    <div class="block">
+      <div class="block-h"><div class="b-num">3</div><div class="b-title">功能介紹</div></div>
+      <div class="flow">
+        <div class="fn"><div class="fbox"><div class="fbox-num">1</div><div class="fbox-t">填 Excel</div><div class="fbox-s">Name、Project、下次上產測、預計 MP</div></div></div>
+        <div class="farrow">›</div>
+        <div class="fn"><div class="fbox"><div class="fbox-num">2</div><div class="fbox-t">解析與清理</div><div class="fbox-s">日期容錯、年份判定、去除隱形字元</div></div></div>
+        <div class="farrow">›</div>
+        <div class="fn"><div class="fbox"><div class="fbox-num">3</div><div class="fbox-t">繪製甘特圖</div><div class="fbox-s">四色狀態、今日紅線、自動寬度</div></div></div>
+        <div class="farrow">›</div>
+        <div class="fn"><div class="fbox"><div class="fbox-num">4</div><div class="fbox-t">週會使用</div><div class="fbox-s">主管與工程師一眼看出進度</div></div></div>
+      </div>
+      <div class="imgrow g1">
+        <div class="img-card" data-src="images/gantt-excel.png" data-cap="輸入：Excel 專案時程表（示範資料）"><div class="img-wrap"><img src="images/gantt-excel.png" alt="Excel 輸入" loading="lazy"></div><div class="cap"><span class="num">INPUT</span>輸入：Excel 專案時程表（示範資料）</div><span class="zoom">🔍 點擊放大</span></div>
+        <div class="img-card" data-src="images/gantt-rolling.png" data-cap="滾動時間軸版本：紅線為今天，右上為「之後行程」面板"><div class="img-wrap"><img src="images/gantt-rolling.png" alt="滾動時間軸版本" loading="lazy"></div><div class="cap"><span class="num">OUTPUT</span>滾動時間軸版本：紅線為今天，右上為「之後行程」面板</div><span class="zoom">🔍 點擊放大</span></div>
+      </div>
+      <div class="chips">
+        <span class="chip hot">四種狀態配色</span><span class="chip hot">今日紅色標線</span><span class="chip">時程條寬度依文字自動調整</span><span class="chip">超出範圍的行程列在「之後行程」面板</span><span class="chip">X 軸共 14 個月，前兩個月留白放案名</span>
+      </div>
+    </div>
+    <div class="block">
+      <div class="block-h"><div class="b-num">4</div><div class="b-title">系統特色</div></div>
+      <div class="sec-list">
+        <div class="sec"><div class="sec-i">📅</div><div><div class="sec-t">日期格式容錯</div><div class="sec-d">「6/E」「Jul」「10月26日」「2026/7/15」等寫法都能辨識；Excel 內部的日期序號也會自動換算，不會默默消失。</div></div></div>
+        <div class="sec"><div class="sec-i">🧹</div><div><div class="sec-t">資料清理與年份判定</div><div class="sec-d">自動清除複製貼上時夾帶的零寬空白；沒寫年份的日期一律視為今年，明年的行程填完整日期，跨年不用改程式。</div></div></div>
+        <div class="sec"><div class="sec-i">💬</div><div><div class="sec-t">友善的錯誤提示</div><div class="sec-d">檔案找不到或格式錯誤時，視窗會停住顯示原因，不會一閃就消失。</div></div></div>
+        <div class="sec"><div class="sec-i">🖱️</div><div><div class="sec-t">即點即用</div><div class="sec-d">雙擊 .py 就能執行，不需要打指令。</div></div></div>
+      </div>
+    </div>
+    <div class="block">
+      <div class="block-h"><div class="b-num">5</div><div class="b-title">開發工具、使用對象與環境</div></div>
+      <table class="dt"><tbody>
+        <tr><td style="width:140px"><strong>開發工具</strong></td><td>Python、pandas（讀取 Excel）、matplotlib（繪圖）</td></tr>
+        <tr><td><strong>使用對象</strong></td><td>部門主管與工程師，每週例會前查看各案時程</td></tr>
+        <tr><td><strong>使用環境</strong></td><td>Windows 電腦安裝 Python，Excel 與程式放在同一個資料夾，雙擊執行</td></tr>
+      </tbody></table>
+      <div class="info green"><div class="info-l">✓ 結論與未來發展</div><p>每週只需要更新 Excel 就能出圖，不再需要用 Canva 手動拉圖。未來可以加上自動輸出圖片檔，讓大家直接貼進週報或簡報使用。</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════ P2 BORROW ═════════════ -->
+<div class="page" id="page-p2" data-title="02 · 設備借用系統">
+  <div class="hero">
+    <div class="hero-deco">🔧</div>
+    <div class="tag">Project 02 · 全端網頁系統</div>
+    <h1 class="hero-h1">MT 設備借用<br><em>管理系統</em></h1>
+    <p class="lead">部門有上百台工具與設備，分別由不同的保管人負責，平常借來借去，最後常常不知道在誰手上。這套系統讓每一台設備的狀態、借用人和歸還時間都查得到，並自動催還；上線後大家陸續提出新需求，至今仍由我持續維護。</p>
+    <div class="stats-row">
+      <div class="stat-chip"><div class="stat-ic">🚀</div><div><div class="stat-v">474 次</div><div class="stat-l">版本提交（至 09/02）</div></div></div>
+      <div class="stat-chip"><div class="stat-ic">⚡</div><div><div class="stat-v">30s → 0.5s</div><div class="stat-l">腳本執行時間</div></div></div>
+      <div class="stat-chip"><div class="stat-ic">💸</div><div><div class="stat-v">$0</div><div class="stat-l">全用免費平台</div></div></div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="block">
+      <div class="block-h"><div class="b-num green">1</div><div class="b-title">系統畫面</div><span class="b-sub">人名、email 與資產編號已遮蔽</span></div>
+      <div class="imgrow g1">
+        <div class="img-card" data-src="images/borrow-home.png" data-cap="系統首頁：設備依保管人分組，可搜尋與篩選"><div class="img-wrap"><img src="images/borrow-home.png" alt="借用系統首頁" loading="lazy"></div><div class="cap"><span class="num">HOME</span>系統首頁：設備依保管人分組，可搜尋與篩選</div><span class="zoom">🔍 點擊放大</span></div>
+      </div>
+      <div class="imgrow g3">
+        <div class="img-card" data-src="images/borrow-form.png" data-cap="借用申請表單"><div class="img-wrap"><img src="images/borrow-form.png" alt="借用申請" loading="lazy"></div><div class="cap"><span class="num">FORM</span>借用申請表單</div><span class="zoom">🔍 點擊放大</span></div>
+        <div class="img-card" data-src="images/borrow-approve.png" data-cap="保管人在信中一鍵審核"><div class="img-wrap"><img src="images/borrow-approve.png" alt="審核頁" loading="lazy"></div><div class="cap"><span class="num">APPROVE</span>保管人一鍵審核</div><span class="zoom">🔍 點擊放大</span></div>
+        <div class="img-card" data-src="images/borrow-history.png" data-cap="歷史紀錄：所有動作都查得到"><div class="img-wrap"><img src="images/borrow-history.png" alt="歷史紀錄" loading="lazy"></div><div class="cap"><span class="num">LOG</span>歷史紀錄</div><span class="zoom">🔍 點擊放大</span></div>
+      </div>
+      <div class="imgrow g1">
+        <div class="img-card" data-src="images/borrow-station.png" data-cap="測試站預約：Wifi throughput、5GNR 按日預約"><div class="img-wrap"><img src="images/borrow-station.png" alt="測試站預約" loading="lazy"></div><div class="cap"><span class="num">NEW</span>新需求：測試站預約（每站每天一人，先登先贏）</div><span class="zoom">🔍 點擊放大</span></div>
+      </div>
+    </div>
+    <div class="block">
+      <div class="block-h"><div class="b-num green">2</div><div class="b-title">模擬操作：從借用到歸還結案</div></div>
+      <p class="prose">左邊是借用系統，右邊是這一步寄出的信。跟著五個步驟走一次：你會輪流扮演借用人和保管人，每一步只要按<strong>發光的按鈕</strong>，按鈕位置都跟正式系統一樣。</p>
+      <div class="demo-frame">
+        <div class="demo-frame-bar"><span></span><span></span><span></span><em>模擬功能</em></div>
+        <div class="bsim" id="bsim"></div>
+        <div class="demo-frame-note">⚠ 模擬畫面：設備與人名為<strong>虛構示範資料</strong>，信件主旨與正式系統相同；信件只顯示在右側，不會真的寄出</div>
+      </div>
+    </div>
+    <div class="block">
+      <div class="block-h"><div class="b-num green">3</div><div class="b-title">權限設計：兩種角色</div></div>
+      <p class="prose">系統只分兩種身分：不用登入的訪客，和登入後的保管人。切換看看兩種身分能做的事與實際畫面。</p>
+      <div class="perm-demo">
+        <div class="perm-toggle">
+          <button class="perm-btn active" data-role="guest">👤 訪客</button>
+          <button class="perm-btn" data-role="keeper">👑 保管人（登入後）</button>
+        </div>
+        <div class="perm-content active" data-role="guest">
+          <div class="perm-grid">
+            <div class="perm-card-info">
+              <span class="ic">👤</span>
+              <h4>訪客（不用登入）</h4>
+              <p>打開網址就能使用，不需要帳號；借用要等保管人審核。</p>
+              <ul class="perm-feats">
+                <li><span class="y">✓</span><span>瀏覽、搜尋設備與歷史紀錄</span></li>
+                <li><span class="y">✓</span><span>預約測試站、手動輸入設備</span></li>
+                <li><span class="y">✓</span><span>送出借用申請，由保管人在信中審核</span></li>
+                <li><span class="y">✓</span><span>續借、歸還</span></li>
+                <li><span class="n">✗</span><span>看不到設備登記、個人設定、我的設備</span></li>
+                <li><span class="n">✗</span><span>不能修改、刪除或轉讓設備</span></li>
+              </ul>
+            </div>
+            <div><div class="img-card" data-src="images/borrow-guest.png" data-cap="訪客畫面：四個分頁，右上角是「管理員登入」"><div class="img-wrap"><img src="images/borrow-guest.png" alt="訪客畫面" loading="lazy"></div><div class="cap"><span class="num">GUEST</span>訪客畫面：四個分頁</div><span class="zoom">🔍 點擊放大</span></div></div>
+          </div>
+        </div>
+        <div class="perm-content" data-role="keeper">
+          <div class="perm-grid">
+            <div class="perm-card-info">
+              <span class="ic">👑</span>
+              <h4>保管人（登入後）</h4>
+              <p>用帳號密碼登入，右上角會顯示 👑。系統上叫「管理員登入」，登入的其實就是各設備的保管人。</p>
+              <ul class="perm-feats">
+                <li><span class="y">✓</span><span>訪客能做的都能做</span></li>
+                <li><span class="y">✓</span><span>借用不用等審核，姓名自動帶入</span></li>
+                <li><span class="y">✓</span><span>設備登記：新增自己保管的設備</span></li>
+                <li><span class="y">✓</span><span>我的設備：修改、刪除、轉讓（由接收的保管人審核）</span></li>
+                <li><span class="y">✓</span><span>個人設定：上傳頭像</span></li>
+                <li><span class="n">✗</span><span>不能動別人保管的設備，後端會再驗證一次身分</span></li>
+              </ul>
+            </div>
+            <div><div class="img-card" data-src="images/borrow-keeper.png" data-cap="保管人登入後：多了設備登記、個人設定、我的設備，右上角顯示 👑"><div class="img-wrap"><img src="images/borrow-keeper.png" alt="保管人登入後畫面" loading="lazy"></div><div class="cap"><span class="num">KEEPER</span>登入後多了三個分頁</div><span class="zoom">🔍 點擊放大</span></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="info blue"><div class="info-l">🔒 登入與審核</div><p>登入連錯 5 次會鎖 15 分鐘，登入後 8 小時內有效。審核借用、確認歸還則是點信裡的<strong>一次性連結</strong>，保管人不用登入也能處理。後台資料（Google Sheet）與帳號由我維護。</p></div>
+    </div>
+    <div class="block">
+      <div class="block-h"><div class="b-num green">4</div><div class="b-title">技術突破</div></div>
+      <div class="info blue"><div class="info-l">🛡️ 在不動公司資安設定的前提下，解決 CORS</div><p>公司資安軟體會擋下瀏覽器跨網域送資料前的「預檢請求」，導致資料寫不進去。我把所有寫入改成 <strong>GET 請求搭配網址參數</strong>，不需要預檢，問題就解決了。</p></div>
+      <div class="info amber"><div class="info-l">⏱ 用實測找出變慢的根本原因</div><p>系統一度要等 30 秒以上，偶爾還會失敗。我比對 Google Apps Script 的執行日誌與實際往返時間，找出瓶頸後加上<strong>快取與每 5 分鐘背景預熱</strong>，並把負擔最重的頭像資料搬到 Supabase。</p>
+        <div class="perf" id="perf">
+          <div class="perf-row"><span class="perf-l">優化前</span><div class="perf-track"><div class="perf-fill slow" data-w="100"></div></div><span class="perf-v" style="color:var(--red)">≈ 30 s</span></div>
+          <div class="perf-row"><span class="perf-l">優化後</span><div class="perf-track"><div class="perf-fill fast" data-w="1.7"></div></div><span class="perf-v" style="color:var(--green)">0.5 s</span></div>
+        </div>
+      </div>
+      <div class="info green"><div class="info-l">🔁 區分讀寫的容錯設計</div><p>讀取失敗會自動重試；寫入則<strong>不重送</strong>，避免重複寄信或重複建立資料，改為提示使用者到列表確認結果。</p></div>
+    </div>
+    <div class="block">
+      <div class="block-h"><div class="b-num green">5</div><div class="b-title">開發工具、使用對象與環境</div></div>
+      <table class="dt"><tbody>
+        <tr><td style="width:140px"><strong>前端</strong></td><td>HTML、CSS、JavaScript，託管於 GitHub Pages</td></tr>
+        <tr><td><strong>後端</strong></td><td>Google Apps Script（API 與排程觸發器）、Gmail 自動寄信</td></tr>
+        <tr><td><strong>資料庫</strong></td><td>Google Sheets；測試站預約、歷史紀錄、頭像使用 Supabase</td></tr>
+        <tr><td><strong>使用對象</strong></td><td>MT 部門同仁（借用人）、設備保管人、系統管理員</td></tr>
+        <tr><td><strong>使用環境</strong></td><td>任何瀏覽器，公司網路即可使用，不需安裝</td></tr>
+      </tbody></table>
+      <div class="info green"><div class="info-l">✓ 結論與未來發展</div><p>設備的去向與歸還時間都能即時查詢，逾期也會自動催還。未來可以把管理員密碼改為雜湊儲存，並把「歸還待確認」的提醒機制延伸到轉讓與延後歸還的審核流程。</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════ P3 ERROR CODE ═════════════ -->
+<div class="page" id="page-p3" data-title="03 · Error Code 查詢">
+  <div class="hero">
+    <div class="hero-deco">🧠</div>
+    <div class="tag">Project 03 · 語意搜尋 × AI</div>
+    <h1 class="hero-h1">Error Code<br><em>語意查詢系統</em></h1>
+    <p class="lead">產線測試失敗時，測試程式會回報一個錯誤碼。部門的錯誤碼表有千餘筆、分成 31 類，以前要找最符合情境的一筆，得把整份檔案丟給 LLM 問，或憑經驗慢慢翻。現在只要用白話描述狀況，中文、英文、越南文都查得到。</p>
+    <div class="stats-row">
+      <div class="stat-chip"><div class="stat-ic">🌏</div><div><div class="stat-v">3 語</div><div class="stat-l">中／英／越</div></div></div>
+      <div class="stat-chip"><div class="stat-ic">🗂</div><div><div class="stat-v">31 類</div><div class="stat-l">錯誤碼分類</div></div></div>
+      <div class="stat-chip"><div class="stat-ic">💸</div><div><div class="stat-v">$0</div><div class="stat-l">運行成本</div></div></div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="block">
+      <div class="block-h"><div class="b-num blue">1</div><div class="b-title">模擬操作：跟正式系統一樣的四個功能</div></div>
+      <p class="prose">下面是照正式系統介面做的模擬版，四個分頁都可以操作。試試在「AI 查詢」用中文描述問題，再切到 VN 用越南文查同一件事，會找到同一組錯誤碼。</p>
+      <div class="demo-frame">
+        <div class="demo-frame-bar"><span></span><span></span><span></span><em>模擬功能</em></div>
+        <div class="ecx" id="ecx"></div>
+        <div class="demo-frame-note">⚠ 模擬畫面：錯誤碼、分類與異動紀錄皆為<strong>虛構示範資料</strong>，語意比對以預先設定的結果模擬，非部門實際錯誤碼表</div>
+      </div>
+    </div>
+    <div class="block">
+      <div class="block-h"><div class="b-num blue">2</div><div class="b-title">實際系統畫面</div></div>
+      <div class="imgrow g1">
+        <div class="img-card" data-src="images/ec-ai.png" data-cap="AI 查詢：輸入「相機測試失敗」，依相符度列出相關錯誤碼"><div class="img-wrap"><img src="images/ec-ai.png" alt="AI 查詢" loading="lazy"></div><div class="cap"><span class="num">AI</span>AI 查詢：輸入「相機測試失敗」，依相符度列出相關錯誤碼</div><span class="zoom">🔍 點擊放大</span></div>
+      </div>
+      <div class="imgrow g2">
+        <div class="img-card" data-src="images/ec-keyword.png" data-cap="關鍵字搜尋"><div class="img-wrap"><img src="images/ec-keyword.png" alt="關鍵字搜尋" loading="lazy"></div><div class="cap"><span class="num">SEARCH</span>關鍵字搜尋</div><span class="zoom">🔍 點擊放大</span></div>
+        <div class="img-card" data-src="images/ec-vi.png" data-cap="越南文介面"><div class="img-wrap"><img src="images/ec-vi.png" alt="越南文介面" loading="lazy"></div><div class="cap"><span class="num">VI</span>越南文介面</div><span class="zoom">🔍 點擊放大</span></div>
+      </div>
+      <table class="dt">
+        <thead><tr><th style="width:140px">功能</th><th>說明</th></tr></thead>
+        <tbody>
+          <tr><td><strong>關鍵字搜尋</strong></td><td>依分類列出含關鍵字的錯誤碼，並標示符合的字</td></tr>
+          <tr><td><strong>AI 語意查詢</strong></td><td>找出意思最接近的前 10 筆並顯示相符度，再由 AI 補充說明</td></tr>
+          <tr><td><strong>三語介面</strong></td><td>繁中／英文／越南文一鍵切換，用任一語言查詢都能找到同一筆代碼</td></tr>
+          <tr><td><strong>後台管理</strong></td><td>管理員登入後可新增、修改、刪除；選分類後自動給下一個編號</td></tr>
+          <tr><td><strong>變更審核</strong></td><td>每次變更寄信給審核員，核准後才正式寫入並產生變更紀錄</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="block">
+      <div class="block-h"><div class="b-num blue">3</div><div class="b-title">系統特色與架構</div></div>
+      <div class="flow">
+        <div class="fn"><div class="fbox"><div class="fbox-num">1</div><div class="fbox-t">使用者描述問題</div><div class="fbox-s">中／英／越任一語言</div></div></div>
+        <div class="farrow">›</div>
+        <div class="fn"><div class="fbox"><div class="fbox-num">2</div><div class="fbox-t">轉成語意向量</div><div class="fbox-s">多語言 MiniLM 模型</div></div></div>
+        <div class="farrow">›</div>
+        <div class="fn"><div class="fbox"><div class="fbox-num">3</div><div class="fbox-t">FAISS 比對</div><div class="fbox-s">找出最接近的 10 筆</div></div></div>
+        <div class="farrow">›</div>
+        <div class="fn"><div class="fbox"><div class="fbox-num">4</div><div class="fbox-t">AI 補充說明</div><div class="fbox-s">Groq · Llama 3.3 70B</div></div></div>
+      </div>
+      <div class="sec-list">
+        <div class="sec"><div class="sec-i">🌏</div><div><div class="sec-t">跨語言語意搜尋</div><div class="sec-d">把文字轉成向量，比對「意思」而不是字面，用中文、英文或越南文描述同一個問題，都能找到同一筆錯誤碼。</div></div></div>
+        <div class="sec"><div class="sec-i">💸</div><div><div class="sec-t">零成本運行</div><div class="sec-d">開源模型 + FAISS 向量索引，AI 說明用 Groq 免費額度，部署在 Hugging Face 免費空間。</div></div></div>
+        <div class="sec"><div class="sec-i">🔐</div><div><div class="sec-t">資安設計</div><div class="sec-d">API 金鑰只存在後端；首次登入自行設定密碼、連錯 5 次鎖定 15 分鐘、密碼強度前後端一致檢查。</div></div></div>
+        <div class="sec"><div class="sec-i">🏗</div><div><div class="sec-t">架構演進</div><div class="sec-d">初版是純前端；為了加上後台管理與審核流程，改寫為 FastAPI 後端，並用 GitHub Actions 自動部署。</div></div></div>
+      </div>
+      <div class="imgrow g1">
+        <div class="img-card" data-src="images/ec-admin.png" data-cap="後台管理：新增、修改、刪除都需審核員核准"><div class="img-wrap"><img src="images/ec-admin.png" alt="後台管理" loading="lazy"></div><div class="cap"><span class="num">ADMIN</span>後台管理：新增、修改、刪除都需審核員核准</div><span class="zoom">🔍 點擊放大</span></div>
+      </div>
+    </div>
+    <div class="block">
+      <div class="block-h"><div class="b-num blue">4</div><div class="b-title">開發工具、使用對象與環境</div></div>
+      <table class="dt"><tbody>
+        <tr><td style="width:140px"><strong>後端</strong></td><td>Python FastAPI、Docker，部署於 Hugging Face Spaces（GitHub Actions 自動部署）</td></tr>
+        <tr><td><strong>語意搜尋</strong></td><td>sentence-transformers（paraphrase-multilingual-MiniLM）、FAISS 向量索引</td></tr>
+        <tr><td><strong>AI 說明</strong></td><td>Groq API（Llama 3.3 70B）</td></tr>
+        <tr><td><strong>資料</strong></td><td>Google Sheets ＋ Google Apps Script</td></tr>
+        <tr><td><strong>使用對象</strong></td><td>產線工程師與測試人員（含越南籍同仁）、錯誤碼表的管理員與審核員</td></tr>
+        <tr><td><strong>使用環境</strong></td><td>任何瀏覽器開啟網址即可查詢，不需安裝</td></tr>
+      </tbody></table>
+      <div class="info green"><div class="info-l">✓ 結論與未來發展</div><p>查錯誤碼從「整份檔案丟給 LLM」或「翻表格」變成「直接描述問題」，而且不分語言；每一次變更都有紀錄可查。未來可以把管理員密碼改為雜湊儲存，並統計常被查詢的問題，回頭改善測試程式的錯誤訊息。</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════ P4 ADC-TESTER ═════════════ -->
+<div class="page" id="page-p4" data-title="04 · ADC-Tester">
+  <div class="hero">
+    <div class="hero-deco">⚡</div>
+    <div class="tag">Project 04 · 硬體量測原型</div>
+    <h1 class="hero-h1">ADC-Tester<br><em>一路壞掉，其他照常</em></h1>
+    <p class="lead">部門現行的量測治具以一支 USB Dongle 串接六片量測板，每片量一個點；只要其中一片掛掉，其他五片也跟著讀不到值。主管交辦：做出能同時量多點電壓電流、而且一個點壞掉不影響其他點的方案，並指定用樹莓派實作。</p>
+    <div class="stats-row">
+      <div class="stat-chip"><div class="stat-ic">📍</div><div><div class="stat-v">6 路</div><div class="stat-l">同時量測</div></div></div>
+      <div class="stat-chip"><div class="stat-ic">🔁</div><div><div class="stat-v">≈ 3 秒</div><div class="stat-l">接回自動恢復</div></div></div>
+      <div class="stat-chip"><div class="stat-ic">🎯</div><div><div class="stat-v">&lt; 1%</div><div class="stat-l">電流校正後誤差</div></div></div>
+      <div class="stat-chip"><div class="stat-ic">💰</div><div><div class="stat-v">NT$1,000</div><div class="stat-l">零件成本</div></div></div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="block">
+      <div class="block-h"><div class="b-num red">1</div><div class="b-title">模擬操作：轉旋鈕、拔一路線看看</div></div>
+      <p class="prose">下面是依實際程式邏輯做的模擬，跟 09/02 現場 Demo 的玩法一樣：<strong>① 轉旋鈕</strong>，CH3、CH4 的電壓會一起變，超出標稱值 ±5% 就即時跳 FAIL；<strong>② 按「拔掉訊號線」</strong>，其他三路照常跳動，接回後約 3 秒自己恢復。也可以切到<em>現行串接方案</em>比較看看。</p>
+      <div class="adc-demo" id="adc-demo">
+        <div class="adc-top">
+          <div class="adc-title">ADC-Tester Dashboard<small>模擬 · 每秒掃描一輪</small></div>
+          <div class="adc-mode">
+            <button class="active" data-mode="new">新設計：多工器＋每路斷電</button>
+            <button data-mode="legacy">現行串接方案</button>
+          </div>
+        </div>
+        <div class="adc-chain" id="adc-chain"></div>
+        <div class="adc-grid" id="adc-grid"></div>
+        <div class="adc-bottom">
+          <div class="adc-log" id="adc-log"></div>
+          <div class="adc-knob-panel">
+            <div class="adc-knob" id="adc-knob" role="slider" tabindex="0" aria-label="旋鈕輸出電壓" aria-valuemin="0" aria-valuemax="3.3">
+              <div class="adc-knob-ring"></div>
+              <div class="adc-knob-dial"><i></i></div>
+            </div>
+            <div class="adc-knob-info">
+              <div class="adc-knob-t">旋鈕模組<small>同時接到 CH3、CH4</small></div>
+              <div class="adc-knob-v"><b id="adc-knob-v">0.90</b> V</div>
+              <input type="range" id="adc-knob-r" min="0" max="3.3" step="0.01" value="0.90" aria-label="旋鈕輸出電壓">
+              <div class="adc-knob-hint">拖動旋鈕或滑桿。CH3 標稱 1.05 V、CH4 標稱 0.9 V，所以同一個電壓下兩路的判定會不一樣。</div>
+            </div>
+          </div>
+        </div>
+        <div class="adc-note">模擬畫面簡化為 4 路（實機為 6 路）。模擬規則與實機相同：連續失敗 3 次才啟動復原（切斷該路 GPIO 電源再重新上電）；超過重試上限就標記停用，不會無限重試。</div>
+      </div>
+      <div class="imgrow g2">
+        <div class="img-card" data-src="images/adc-dashboard.png" data-cap="實機網頁儀表板：六路數值與 PASS／FAIL"><div class="img-wrap"><img src="images/adc-dashboard.png" alt="網頁儀表板" loading="lazy"></div><div class="cap"><span class="num">REAL</span>實機網頁儀表板</div><span class="zoom">🔍 點擊放大</span></div>
+        <div class="img-card" data-src="images/adc-diagnose.png" data-cap="自我診斷：CH3 回報錯誤（5/6 路正常）"><div class="img-wrap"><img src="images/adc-diagnose.png" alt="自我診斷" loading="lazy"></div><div class="cap"><span class="num">DIAG</span>自我診斷：CH3 回報錯誤（5/6 路正常）</div><span class="zoom">🔍 點擊放大</span></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-h"><div class="b-num red">2</div><div class="b-title">系統架構：兩層隔離</div></div>
+      <div class="imgrow g1">
+        <div class="img-card" data-src="images/adc-compare.png" data-cap="現行串接方案與新設計的差異"><div class="img-wrap"><img src="images/adc-compare.png" alt="架構比較" loading="lazy"></div><div class="cap"><span class="num">DESIGN</span>現行串接方案與新設計的差異</div><span class="zoom">🔍 點擊放大</span></div>
+      </div>
+      <div class="ref-grid" style="margin-top:8px">
+        <div class="ref-card"><div class="ref-card-deco">🔀</div><div class="ref-ic">🔀</div><div class="ref-t">通道隔離</div><div class="ref-d">TCA9548A 多工器同一時間只接通一路，某一路的通訊線出問題時，不會拖累其他路。六顆 INA226 位址都是 0x40 也不會衝突，換模組不必重新設定。</div></div>
+        <div class="ref-card" style="--c: linear-gradient(90deg, #4ADE80, #16A34A); --c-bg: linear-gradient(135deg, #DCFCE7, #4ADE80);"><div class="ref-card-deco">🔌</div><div class="ref-ic">🔌</div><div class="ref-t">電源隔離</div><div class="ref-d">每顆 INA226 的電源由樹莓派一支獨立的 GPIO 供應，某一路卡住時可以單獨斷電重啟，不必整組重來。</div></div>
+      </div>
+      <div class="imgrow g1">
+        <div class="img-card" data-src="images/adc-arch.png" data-cap="ADC-Tester 系統架構"><div class="img-wrap"><img src="images/adc-arch.png" alt="系統架構" loading="lazy"></div><div class="cap"><span class="num">ARCH</span>ADC-Tester 系統架構</div><span class="zoom">🔍 點擊放大</span></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-h"><div class="b-num red">3</div><div class="b-title">硬體與實作</div></div>
+      <div class="imgrow g3">
+        <div class="img-card" data-src="images/ina226.jpg" data-cap="INA226 量測模組：16 位元、0～36 V"><div class="img-wrap"><img src="images/ina226.jpg" alt="INA226" loading="lazy"></div><div class="cap"><span class="num">×6</span>INA226 量測模組</div><span class="zoom">🔍 點擊放大</span></div>
+        <div class="img-card" data-src="images/tca9548a.jpg" data-cap="TCA9548A 八通道 I2C 多工器"><div class="img-wrap"><img src="images/tca9548a.jpg" alt="TCA9548A" loading="lazy"></div><div class="cap"><span class="num">×2</span>TCA9548A 多工器</div><span class="zoom">🔍 點擊放大</span></div>
+        <div class="img-card" data-src="images/adc-knob.jpg" data-cap="旋鈕模組：Demo 時模擬待測物的可調電壓源"><div class="img-wrap"><img src="images/adc-knob.jpg" alt="旋鈕模組" loading="lazy"></div><div class="cap"><span class="num">DEMO</span>旋鈕模組（可調電壓源）</div><span class="zoom">🔍 點擊放大</span></div>
+      </div>
+      <div class="imgrow g21">
+        <div class="img-card" data-src="images/adc-wiring.jpg" data-cap="完成接線的樹莓派：六顆 INA226、多工器與旋鈕模組"><div class="img-wrap"><img src="images/adc-wiring.jpg" alt="完成接線" loading="lazy"></div><div class="cap"><span class="num">41 條</span>六路合計 41 條杜邦線</div><span class="zoom">🔍 點擊放大</span></div>
+        <div class="img-card" data-src="images/adc-wiring2.jpg" data-cap="接線近照"><div class="img-wrap"><img src="images/adc-wiring2.jpg" alt="接線近照" loading="lazy"></div><div class="cap"><span class="num">RPi 4</span>接線近照</div><span class="zoom">🔍 點擊放大</span></div>
+      </div>
+      <p class="prose">程式以 Python 撰寫，分成量測晶片驅動、多工器驅動、掃描與狀態管理、網頁、資料紀錄五個模組。每一路都有自己的狀態，<strong>連續失敗 3 次才啟動復原</strong>，避免偶發雜訊造成誤判。程式設成開機自動啟動的系統服務，插電約 60 秒後網頁就會自己出現。</p>
+      <div class="imgrow g1">
+        <div class="img-card" data-src="images/adc-fsm.png" data-cap="每一路的故障處理流程"><div class="img-wrap"><img src="images/adc-fsm.png" alt="故障處理流程" loading="lazy"></div><div class="cap"><span class="num">FSM</span>每一路的故障處理流程：OK → FAULT → RECOVERING → DISABLED</div><span class="zoom">🔍 點擊放大</span></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-h"><div class="b-num red">4</div><div class="b-title">除錯紀錄：三個文件上學不到的觀念</div></div>
+      <table class="dt">
+        <thead><tr><th style="width:150px">問題</th><th>原因</th><th>解法與學到的事</th></tr></thead>
+        <tbody>
+          <tr><td><strong>CH3 通訊失敗</strong></td><td>位址是 0x44，不是預期的 0x40</td><td>手動只開這一路掃描位址才找到；換上備品後恢復</td></tr>
+          <tr><td><strong>讀值永遠是 0 V</strong></td><td>網路文件說電壓接 IN−，但這款模組的電壓腳獨立拉出為 VBS</td><td>改接 VBS 立即正常。<em style="color:var(--terra-600);font-style:normal;font-weight:700">以板子絲印為準</em>，不能只信網路文件</td></tr>
+          <tr><td><strong>CH3 讀值偏高 3.65%</strong></td><td>模組增益誤差（誤差與電壓成正比）</td><td>更換備品後誤差 −0.07%；舊模組標記留存不再使用</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="block">
+      <div class="block-h"><div class="b-num red">5</div><div class="b-title">驗證結果</div></div>
+      <table class="dt">
+        <thead><tr><th style="width:220px">實際拔掉一路的 SDA 線</th><th>結果</th></tr></thead>
+        <tbody>
+          <tr><td>其餘五路是否受影響</td><td>全程正常讀值，無任何錯誤 <span class="status-badge g">✓</span></td></tr>
+          <tr><td>接回後是否自動恢復</td><td>約 3 秒自動恢復，不需人工介入 <span class="status-badge g">✓</span></td></tr>
+          <tr><td>持續故障時</td><td>超過重試上限後標記停用，不會無限重試；可在網頁一鍵復原 <span class="status-badge g">✓</span></td></tr>
+        </tbody>
+      </table>
+      <table class="dt">
+        <thead><tr><th style="width:160px">電壓驗證</th><th>方法</th><th>結果</th></tr></thead>
+        <tbody>
+          <tr><td><strong>六路一致性</strong></td><td>以樹莓派 3.3 V 同時接各路</td><td>五路離散度 7.5 mV（0.22%）</td></tr>
+          <tr><td><strong>多點線性度</strong></td><td>旋鈕產生 0.9／1.05／1.8 V，與三用電表比對</td><td>三點誤差皆為 +0.8%，屬固定比例差異</td></tr>
+          <tr><td><strong>重複性</strong></td><td>隔一週、換電壓、重新接線後複驗</td><td>兩次結果完全一致</td></tr>
+        </tbody>
+      </table>
+      <div class="hl-band"><div class="ic">✅</div><p>「多點量測」與「一點壞掉不影響其他點」兩項目標都已達成，並於 <strong>09/02 對部門同仁現場 Demo</strong>；電流以已知負載校正後，誤差在 1% 以內。</p></div>
+      <div class="info purple"><div class="info-l">➜ 後續進度</div><p>主管希望沿用治具原本的 USB Dongle，不再另外使用樹莓派。韌體在 AI 協助下改寫成 C，我負責接線、燒錄與實測；以「Dongle＋治具原量測板＋多工器」實測，電壓量測、電流量測（誤差約 ±0.5%）與故障隔離三項都已驗證完成。</p></div>
+    </div>
+
+    <div class="block">
+      <div class="block-h"><div class="b-num red">6</div><div class="b-title">開發工具、使用對象與環境</div></div>
+      <table class="dt"><tbody>
+        <tr><td style="width:140px"><strong>硬體平台</strong></td><td>Raspberry Pi 4、INA226、TCA9548A、麵包板、杜邦線</td></tr>
+        <tr><td><strong>軟體</strong></td><td>Python 3、smbus2、gpiozero、Flask、PyYAML；systemd 開機自動啟動</td></tr>
+        <tr><td><strong>開發與除錯</strong></td><td>SSH、tmux、i2c-tools、三用電表、水泥電阻、自製旋鈕電壓源</td></tr>
+        <tr><td><strong>使用對象</strong></td><td>需要同時監看待測板多個電源點的量測與測試工程師</td></tr>
+        <tr><td><strong>使用環境</strong></td><td>樹莓派以網路線連接電腦；任何有瀏覽器的電腦即可查看儀表板</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════ P5 LOG CPK ═════════════ -->
+<div class="page" id="page-p5" data-title="05 · Log CPK Validator">
+  <div class="hero">
+    <div class="hero-deco">📋</div>
+    <div class="tag">Project 05 · 產線資料品質</div>
+    <h1 class="hero-h1">Log CPK Validator<br><em>送出前先抓問題</em></h1>
+    <p class="lead">工廠用一支 C++ 寫的 CPK 報表工具，把大量測試 log 彙整成製程能力統計報表。這支工具對格式非常嚴格，測試程式一換版、log 格式一動，報表就可能產不出來，而錯誤訊息又看不出問題在哪一行。這個網頁讓 MT 在送出前就能自己檢查。</p>
+    <div class="stats-row">
+      <div class="stat-chip"><div class="stat-ic">📜</div><div><div class="stat-v">16 條</div><div class="stat-l">從原始碼推導的規則</div></div></div>
+      <div class="stat-chip"><div class="stat-ic">🧾</div><div><div class="stat-v">≈ 2,800 行</div><div class="stat-l">交給 AI 分析的 C++ 原始碼</div></div></div>
+      <div class="stat-chip"><div class="stat-ic">🗂</div><div><div class="stat-v">5 種</div><div class="stat-l">支援的 log 格式</div></div></div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="block">
+      <div class="block-h"><div class="b-num purple">1</div><div class="b-title">為什麼格式差一點就會出事</div></div>
+      <p class="prose">CPK 工具讀 log 的方式不是「看懂文字」，而是<em>數字元位置</em>：先固定跳過每行開頭 20 個字（日期時間），再用第幾個詞取出測項名稱與量測值。只要排版偏掉一點，抓到的位置就整個錯開，程式直接停住。</p>
+      <div class="ruler">
+        <div class="ruler-line"><span class="skip">2026/09/01 10:12:03 </span>RF  <span class="w3">TX_POWER_2G</span>  :  <span class="w5">18.42</span>  ( 15.00 , 21.00 )</div>
+        <div class="ruler-line" style="margin-top:6px; color:#F87171">RF  TX_POWER_2G  :  18.42  ( 15.00 , 21.00 )   <span style="color:#64748B">← 少了日期時間，跳過 20 字後位置全錯</span></div>
+        <div class="ruler-cap"><span><i style="background:rgba(156,163,175,.5)"></i>固定跳過 20 字</span><span><i style="background:rgba(15, 157, 138, .6)"></i>第 3 個詞：測項名稱</span><span><i style="background:rgba(110,231,183,.5)"></i>第 5 個詞：量測值</span></div>
+      </div>
+      <p style="font-size:12px;color:var(--ink-300)">上方為示意用的簡化格式，不是實際 log 內容。</p>
+    </div>
+
+    <div class="block">
+      <div class="block-h"><div class="b-num purple">2</div><div class="b-title">模擬操作：整批檢查 log</div></div>
+      <p class="prose">左邊是拖放區，點範例 log 就像把檔案拖進去，檢查會自動執行；右邊是結果。點任一個檔案，可以看到<strong>出問題那一行的 log 原文</strong>、影響和處理方式。右上角可以切換中文、English、Tiếng Việt，跟實際工具一樣。</p>
+      <div class="demo-frame">
+        <div class="demo-frame-bar"><span></span><span></span><span></span><em>模擬功能</em></div>
+        <div class="cxs" id="cxs"></div>
+        <div class="demo-frame-note">⚠ 模擬畫面：log 皆為<strong>虛構示範資料</strong>，只示範其中 8 條規則；實際工具有 16 條規則、支援 5 種 log 格式</div>
+      </div>
+      <div class="imgrow g2">
+        <div class="img-card" data-src="images/cpk-result.png" data-cap="實際工具：整批檢查結果（檔名已遮蔽）"><div class="img-wrap"><img src="images/cpk-result.png" alt="檢查結果" loading="lazy"></div><div class="cap"><span class="num">REAL</span>實際工具：整批檢查結果</div><span class="zoom">🔍 點擊放大</span></div>
+        <div class="img-card" data-src="images/cpk-detail.png" data-cap="實際工具：各檔詳細內容（機種與序號已遮蔽）"><div class="img-wrap"><img src="images/cpk-detail.png" alt="詳細內容" loading="lazy"></div><div class="cap"><span class="num">REAL</span>實際工具：各檔詳細內容</div><span class="zoom">🔍 點擊放大</span></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-h"><div class="b-num purple">3</div><div class="b-title">判定方式</div></div>
+      <p class="prose">每一份 log 會得到一個判定；另外有兩條規則要<strong>整批 log 一起看</strong>才能發現，用「參考」提示，不影響單份 log 的判定。</p>
+      <table class="dt">
+        <thead><tr><th style="width:110px">每份 log</th><th>意義</th><th>規則舉例</th></tr></thead>
+        <tbody>
+          <tr><td><span class="sev ng">不合格</span></td><td>CPK 完全產不出來，工具會中止或崩潰</td><td>缺開頭日期時間、量測值非數字、上下限缺左括號、缺結尾通過標記</td></tr>
+          <tr><td><span class="sev warn">注意</span></td><td>CPK 產得出來，但部分測項會被<strong>默默跳過</strong></td><td>行過長（超過 255 字）、上下限缺右括號、表頭缺欄位</td></tr>
+          <tr><td><span class="status-badge g">合格</span></td><td>格式沒有問題，CPK 可以正常產出</td><td>—</td></tr>
+        </tbody>
+      </table>
+      <table class="dt">
+        <thead><tr><th style="width:110px">整批提示</th><th>狀況</th><th>後果</th></tr></thead>
+        <tbody>
+          <tr><td><span class="sev ref">參考</span></td><td>MT 版本不一致：同一批 log 出現不同 MT 版本</td><td>拆成不同 CPK 檔，每個版本的樣本變少</td></tr>
+          <tr><td><span class="sev ref">參考</span></td><td>log 份數不足：少於 2 台 DUT 的 log</td><td>資料不足，<strong>不產出 CPK</strong></td></tr>
+        </tbody>
+      </table>
+      <div class="info amber"><div class="info-l">⚠ 「注意」反而比「不合格」危險</div><p>不合格會直接報錯，一定會被發現；「注意」的情況下 CPK 照樣產出，測項卻悄悄少了幾個，更難察覺，所以網頁會特別標出來。另外要強調：這個工具檢查的是<strong>格式</strong>，不是測試結果。</p></div>
+    </div>
+
+    <div class="block">
+      <div class="block-h"><div class="b-num purple">4</div><div class="b-title">實際案例</div></div>
+      <p class="prose">用這套方法找出了部門回報的兩批 log 產不出 CPK 的根本原因：</p>
+      <table class="dt">
+        <thead><tr><th style="width:170px">案例</th><th>根本原因</th><th>結果</th></tr></thead>
+        <tbody>
+          <tr><td><strong>案例 A</strong><br><span style="font-size:12px;color:var(--ink-300)">IQF 站・36 份 log</span></td><td>子工具的輸出被併入 log 時缺少開頭的日期時間（約 1 萬行中有 9,790 行沒有）；CPK 工具固定跳過 20 個字元再讀取，位置整個錯開而中止</td><td>補上測項相關行的日期時間後 <span class="status-badge g">36／36 通過</span>，產出 360 項 CPK</td></tr>
+          <tr><td><strong>案例 B</strong><br><span style="font-size:12px;color:var(--ink-300)">PT 站・5 份 log</span></td><td>日期時間後面接的是 Tab 而不是空白，舊版工具無法處理；新版工具已會自動轉換</td><td>以新版工具確認 <span class="status-badge g">5／5 通過</span>，產出 1,277 項 CPK</td></tr>
+        </tbody>
+      </table>
+      <div class="info amber"><div class="info-l">🔎 順便發現的潛在問題</div><p>CPK 工具本身用 32 位元的整數接收檔案搜尋的代號，若改用 64 位元編譯會被截斷而當掉。目前使用的 32 位元版本不受影響，我已把原因與建議的修正方式整理起來。</p></div>
+    </div>
+
+    <div class="block">
+      <div class="block-h"><div class="b-num purple">5</div><div class="b-title">系統特色、工具與環境</div></div>
+      <div class="sec-list">
+        <div class="sec"><div class="sec-i">🔒</div><div><div class="sec-t">資料不外傳</div><div class="sec-d">log 只在使用者自己的瀏覽器內解析，不上傳到任何伺服器，也不留下紀錄。</div></div></div>
+        <div class="sec"><div class="sec-i">📴</div><div><div class="sec-t">可離線使用</div><div class="sec-d">單一 HTML 檔、不引用任何外部資源，可以存在本機給產線的離線電腦使用。</div></div></div>
+      </div>
+      <table class="dt"><tbody>
+        <tr><td style="width:140px"><strong>開發工具</strong></td><td>HTML、CSS、JavaScript（單一檔案、零外部資源）；Excel 匯出自行產生 .xlsx，不依賴外部套件</td></tr>
+        <tr><td><strong>驗證工具</strong></td><td>Visual Studio 2022：編譯 CPK 工具原始碼，實際執行比對</td></tr>
+        <tr><td><strong>使用對象</strong></td><td>MT 工程師、需要回報問題的產線與工廠端</td></tr>
+        <tr><td><strong>使用環境</strong></td><td>Windows 搭配 Edge 或 Chrome；不需安裝、不需連網</td></tr>
+        <tr><td><strong>文件</strong></td><td>系統說明書：檢查機制、16 條規則、判定等級、系統限制與使用方式</td></tr>
+      </tbody></table>
+      <div class="info green"><div class="info-l">✓ 結論與未來發展</div><p>過去 log 格式出問題時，只能等工廠回報「跑不出來」再請人改程式；現在 MT 在送出前就能自己檢查，直接看到問題在第幾行、該怎麼修。兩批 log 的根本原因也都透過這個工具與實際編譯驗證找了出來。目前已交付部門使用；未來規則需要隨 CPK 工具改版同步更新。</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════ EVAL ═════════════ -->
+<div class="page" id="page-eval" data-title="自我評估與建議">
+  <div class="hero">
+    <div class="hero-deco">📈</div>
+    <div class="tag">參 · 自我評估 ＆ 提案改善</div>
+    <h1 class="hero-h1">用<em>實際數據</em>說話</h1>
+    <p class="lead">我最滿意的是每一個結論都有對應的實測與紀錄；需要加強的是把技術講清楚的能力，以及面對全新領域時的心態。</p>
+  </div>
+  <div class="content">
+    <div class="block">
+      <div class="block-h"><div class="b-num amber">1</div><div class="b-title">自我評估</div></div>
+      <div class="eval">
+        <div class="eval-row"><div class="eval-n">任務達成</div><div class="eval-stars" data-score="5"></div><div class="eval-d">五個專案都完成並實際使用或 Demo；ADC-Tester 交辦項目全部經過實測驗證</div></div>
+        <div class="eval-row"><div class="eval-n">技術學習</div><div class="eval-stars" data-score="4"></div><div class="eval-d">從網頁前後端、雲端部署、語意搜尋，到 I2C 與量測電路，每個專案都是新領域；焊接與韌體仍是新手</div></div>
+        <div class="eval-row"><div class="eval-n">問題解決</div><div class="eval-stars" data-score="4"></div><div class="eval-d">會先用實測縮小範圍（例如比對執行日誌找出系統變慢的原因）；但偶爾太早下結論，之後被實測推翻</div></div>
+        <div class="eval-row"><div class="eval-n">溝通表達</div><div class="eval-stars" data-score="3"></div><div class="eval-d">報告從資訊太多改到簡潔有力；Demo 時曾誤解同事的提問而答錯方向，還需要練習</div></div>
+        <div class="eval-row"><div class="eval-n">文件紀錄</div><div class="eval-stars" data-score="5"></div><div class="eval-d">每個專案都有改動紀錄、測試紀錄或使用說明，隔週回頭也能接得上</div></div>
+      </div>
+    </div>
+    <div class="block">
+      <div class="block-h"><div class="b-num amber">2</div><div class="b-title">提案改善或建議</div></div>
+      <div class="info blue"><div class="info-l">🔍 對現行串接架構的觀察</div><p>現行治具的六片量測板串接在同一條 I2C 匯流排上。I2C 的特性是只要有一個裝置把訊號線拉住，整條匯流排上的其他裝置都無法通訊，這可能是「一片掛掉、六片全掛」的原因之一，也可能與供電不穩同時存在。因此我的設計<strong>同時處理通訊與供電兩層</strong>，不論是哪一種原因都能涵蓋。</p></div>
+      <div class="ref-grid">
+        <div class="ref-card" style="--c: linear-gradient(90deg, #F87171, #DC2626); --c-bg: linear-gradient(135deg, #FEE2E2, #F87171);">
+          <div class="ref-card-deco">⚡</div><div class="ref-ic">⚡</div><div class="ref-t">ADC-Tester 原型的改善方向</div>
+          <div class="ref-d">
+            <strong>1. 改成 PCB</strong>：41 條杜邦線中有 30 條在模組端，接觸不良是最常見的不穩定來源。<br>
+            <strong>2. 建立校正流程</strong>：每顆模組的分流電阻偏差都不同，需要個別校正。<br>
+            <strong>3. 絕對校正</strong>：借用經過校驗的電表，把相對比較變成絕對校正。<br>
+            <strong>4. 復原計數改良</strong>：通道恢復後把復原次數歸零，避免長時間運作後額度用完。<br>
+            <strong>5. 加入電氣隔離</strong>：若各量測點不共地，新設計需要把隔離加回去。
+          </div>
+        </div>
+        <div class="ref-card" style="--c: linear-gradient(90deg, #60A5FA, #2563EB); --c-bg: linear-gradient(135deg, #DBEAFE, #60A5FA);">
+          <div class="ref-card-deco">🌐</div><div class="ref-ic">🌐</div><div class="ref-t">網頁系統的改善方向</div>
+          <div class="ref-d">
+            <strong>1. 密碼雜湊</strong>：兩個系統的管理員密碼改為雜湊儲存。<br>
+            <strong>2. 延伸提醒機制</strong>：「轉讓」與「延後歸還」也可能卡住無人處理，可沿用「歸還待確認」的提醒。<br>
+            <strong>3. 降低平台風險</strong>：Google Apps Script 的回應速度無法控制，需要即時等待的功能建議逐步移到較穩定的平台。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════ REFLECT ═════════════ -->
+<div class="page" id="page-reflect" data-title="學習心得與感想">
+  <div class="hero">
+    <div class="hero-deco">💡</div>
+    <div class="tag">肆 · 工作體驗與感想</div>
+    <h1 class="hero-h1">一步一步來，<br><em>總能往前推進</em></h1>
+    <p class="lead">五個專案的領域都不一樣：辦公室的自動化小工具、部門內部的管理網站、完全陌生的硬體量測，到替產線既有的報表工具做格式驗證。</p>
+  </div>
+  <div class="content">
+    <div class="block">
+      <div class="block-h"><div class="b-num">1</div><div class="b-title">技術面</div></div>
+      <div class="chips">
+        <span class="chip hot">網頁前後端分工與 API 設計</span>
+        <span class="chip hot">GitHub Pages・Hugging Face・Docker 自動部署</span>
+        <span class="chip blue">向量、語意相似度與 RAG</span>
+        <span class="chip green">I2C、多工器與量測電路</span>
+        <span class="chip green">讀 datasheet、分清推算與實測</span>
+        <span class="chip purple">與 AI 分析 2,800 行 C++ 推導規則</span>
+      </div>
+    </div>
+    <div class="block">
+      <div class="block-h"><div class="b-num">2</div><div class="b-title">感想</div></div>
+      <p class="prose">主管喜歡讓我嘗試各種不同的事物，用最近熱門的 AI Agent 去達成任務。現在的趨勢是與 AI 合作，下指令也是一種學問：<strong>學著把問題描述清楚，並從中學習解決</strong>，這是我來實習得到的最大收穫。</p>
+      <p class="prose">最有成就感的，是看到自己做的東西真的有人在用：同事透過借用系統借設備、收到催還信；越南籍同仁也能用母語查錯誤碼。當初為了找免費模型、弄懂 RAG 架構，我查資料、問同學、問 AI，才讓查詢系統順利完成。</p>
+      <div class="quote">ADC-Tester 第一次故障隔離實測時，我親手拔掉一路的線，看著其他五路的數字照樣跳動，接回去三秒後那一路也自己恢復。那一刻我知道這個設計是真的可行，不只是寫在計畫書上的想法。</div>
+      <p class="prose">其實 ADC-Tester 這個任務，一開始聽到我的內心是瘋狂吶喊的。對一個高中三年讀文組的人來說，接線、麵包板根本是未知的宇宙。但我還是試著耐心地一步步來，最終做出了可行的成果。後來的 Dongle 韌體又是一個全新的領域，但這次我比較不怕了，因為我知道<em>只要一步一步來，總是能往前推進</em>，最後也真的在 Dongle 上完成了驗證。</p>
+      <div class="hl-band"><div class="ic">🙏</div><p>感謝智易科技製造測試軟體部門的主管與同事，也感謝林志麟老師的指導。</p></div>
+    </div>
+  </div>
+</div>
+
+</main>
+</div>
+
+<button id="fab" aria-label="回到頂端">↑</button>
+<script src="js/app.js"></script>
+<script src="js/ec-demo.js"></script>
+<script src="js/gantt-demo.js"></script>
+<script src="js/borrow-sim.js"></script>
+<script src="js/cpk-sim.js"></script>
+</body>
+</html>
