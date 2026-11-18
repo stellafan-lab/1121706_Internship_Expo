@@ -125,3 +125,5 @@ h1.hero-h1 em, .home-h1 em, .home-projects-t em {
 
 /* 首頁標題縮小（2026-11-18，A 版） */
 .home-h1 { font-size: clamp(30px, 4vw, 46px); font-weight: 700; }
+/* 內頁大標題縮小（2026-11-18） */
+h1.hero-h1 { font-size: clamp(26px, 3vw, 34px); }
